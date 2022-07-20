@@ -1,3 +1,5 @@
+import {updatePage} from "./display"
+
 let currentWeatherData = '';
 
 async function getCurrentWeather(location) {
@@ -9,7 +11,8 @@ async function getCurrentWeather(location) {
         const weatherData = await weatherResponse.json();
 
         currentWeatherData = weatherData;
-        console.log(currentWeatherData);
+        console.log(currentWeatherData);     // TO REMOVE 
+        updatePage();
     } catch (err) {
         console.log(err);
     }
