@@ -1,4 +1,5 @@
 import { callCurrentData } from "./apiCalls";
+import { convertUnit } from "./tempDate";
 
 function updatePage(){ 
     document.getElementById('location').textContent = callCurrentData().name;
@@ -11,18 +12,12 @@ function updatePage(){
 
 function updateTemperature(){
     const temperature = Math.round(callCurrentData().main.temp * 1) / 1;
-    document.getElementById('mainTemp').textContent = toCelcius(temperature);
+    document.getElementById('mainTemp').textContent = convertUnit(temperature);
 
     const feelsLikeTemp = Math.round(callCurrentData().main.feels_like * 1) / 1;
-    document.getElementById('feelsLike').textContent = toCelcius(feelsLikeTemp);
+    document.getElementById('feelsLike').textContent = convertUnit(feelsLikeTemp);
 }
 
-function toCelcius(kelvin) {
-    return `${kelvin - 273}°C`;
-}
 
-// function toFahrenheit(kelvin) {
-//     return (kelvin + 460)
-// }
 
 export {updatePage};
