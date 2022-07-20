@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <img id="backgroundImage" src="../src/images/background.jpg" alt="backgroundImage">
+    <img id="backgroundImage" src="../src/images/background.jpg" alt="backgroundImage"/>
     
     <div id="centerForm">
         <form id="weatherForm" onsubmit="return false">
@@ -18,30 +18,52 @@
     </div>
 
     <div id="main">
-        <div id="mainLeft">
-            <div id="location">Location</div>
+        <div id="mainLeft" class ='mainBody'>
+            <div id="location" class="contentText3">Location</div>
             <div class="flexRow">
                 <div class="contentText1 justifyItemCenter">Last Updated:</div>
                 <div id="date">DATE</div>
                 <div id="time">TIME</div>
             </div>
             <div id='tempAndIcon' class="flexRow">
-                <div class="contentText3"> 16°C</div>
+                <div id='mainTemp' class="contentText3"> 16°C</div>
                 <img id="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="weatherIcon">
             </div>
             <div class="flexRow">
-                <div>Description: </div>
-                <div id="description">TEST DESCRIPTION</div>
+                <div>Description:   </div>
+                <div id="description"></div>
             </div>
         </div>
 
-        <div id="mainRight">
-            <button>TST BUTTON</button>
+        <div id="mainRight" class ='mainBody'>
+            <div class="flexRow">
+                <i class="fa-solid fa-temperature-half fa-3x"></i>
+                <div class="flexColumn">
+                    <div>Feels Like</div>
+                    <div id="feelsLike"></div>
+                </div>
+            </div>
+            <div class="flexRow">
+                <i class="fa-solid fa-house-flood-water fa-2x"></i>
+                <div class="flexColumn">
+                    <div>Humidity: </div>
+                    <div id="humidity"></div>
+                </div>
+            </div>
+            <div class="flexRow">
+                <i class="fa-solid fa-temperature-arrow-up fa-2x"></i>
+                <div class="flexColumn">
+                    <div>Pressure: </div>
+                    <div id="pressure"></div>
+                </div>
+            </div>
+            
         </div>
     </div>
 
     <button id="test">test</button>
 
     <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/bb58922bd7.js" crossorigin="anonymous"></script>
 </body>
 </html>
