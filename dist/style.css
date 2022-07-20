@@ -56,13 +56,12 @@ table {
 }
 
 div{
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.90);
 }
 
 .flexRow{
     display: flex;
     flex-direction: row;
-    border: black solid 1px;
     gap: 0.5em;
 }
 
@@ -87,6 +86,13 @@ i{
     font-size: 3em;
 }
 
+.contentText2{
+    font-size: 2em;
+}
+
+.contentText1_5{
+    font-size: 1.5em;
+}
 
 /* centerForm */
 #centerForm{
@@ -125,7 +131,6 @@ i{
 
 /* bottom formatting */
 #bottom{
-    border: black solid 1px;
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -134,17 +139,20 @@ i{
     bottom: 10vh;
 }
 
-#weeklyForecast{
+#hourlyForecast{
     display: flex;
     justify-content: space-between;
     width: 90vw;
     left: 5vw;
     bottom: 10vh;
-    border: green solid    1px;
 }
 
-.forecastWeekly{
-    height: 7em;
+.forecastHourly{
+    height: auto;
     width: 5em;
-    border: green solid    1px;
+    gap: 5px;
+}
+
+.hourValue{
+    padding-bottom: 1em;
 }
