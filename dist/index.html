@@ -8,10 +8,40 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <form id="weatherForm" onsubmit="return false">
-        <input id='weatherInput' type='text' maxlength="30" required/>
-        <button id='submitBtn' type="submit">search</button>
-    </form>
+    <img id="backgroundImage" src="../src/images/background.jpg" alt="backgroundImage">
+    
+    <div id="centerForm">
+        <form id="weatherForm" onsubmit="return false">
+            <input id='weatherInput' type='text' maxlength="30" required/>
+            <button id='submitBtn' type="submit">search</button>
+        </form>
+    </div>
+
+    <div id="main">
+        <div id="mainLeft">
+            <div id="location">Location</div>
+            <div class="flexRow">
+                <div class="contentText1 justifyItemCenter">Last Updated:</div>
+                <div id="date">DATE</div>
+                <div id="time">TIME</div>
+            </div>
+            <div id='tempAndIcon' class="flexRow">
+                <div class="contentText3"> 16°C</div>
+                <img id="weatherIcon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="weatherIcon">
+            </div>
+            <div class="flexRow">
+                <div>Description: </div>
+                <div id="description">TEST DESCRIPTION</div>
+            </div>
+        </div>
+
+        <div id="mainRight">
+            <button>TST BUTTON</button>
+        </div>
+    </div>
+
+    <button id="test">test</button>
+
     <script src="main.js"></script>
 </body>
 </html>
