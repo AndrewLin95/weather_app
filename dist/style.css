@@ -149,10 +149,15 @@ i{
 
 .forecastHourly{
     height: auto;
-    width: 5em;
+    width: 7em;
     gap: 5px;
 }
 
 .hourValue{
     padding-bottom: 1em;
+}
+
+.weatherIcon{
+    position:relative;
+    right: 1.5em;
 }
