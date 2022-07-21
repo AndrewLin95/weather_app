@@ -7,7 +7,7 @@ function updateTopPage(){
     document.getElementById('location').textContent = callCurrentData().name;
     updateWeeklyTemperature();
     document.getElementById('weatherIcon').setAttribute('src', `http://openweathermap.org/img/wn/${callCurrentData().weather[0].icon}@2x.png`);
-    document.getElementById('description').textContent = ` ${callCurrentData().weather[0].description}`;
+    document.getElementById('description').textContent = capitalizeFirstLetter(callCurrentData().weather[0].description);
     document.getElementById('humidity').textContent = `${callCurrentData().main.humidity} %`;
     document.getElementById('pressure').textContent = `${callCurrentData().main.pressure} kPa`;
     document.getElementById('sunrise').textContent = convertTime(callCurrentData().sys.sunrise).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
@@ -33,7 +33,7 @@ function updateBottomPage(){
         document.getElementById(`temp${i}`).textContent = convertUnit(temp);
         document.getElementById(`weatherIcon${i}`).setAttribute('src', `http://openweathermap.org/img/wn/${callHourlyData().list[i].weather[0].icon}@2x.png`);
 
-        document.getElementById(`description${i}`).textContent = callHourlyData().list[i].weather[0].description;
+        document.getElementById(`description${i}`).textContent = capitalizeFirstLetter(callHourlyData().list[i].weather[0].description);
         i++;
     }
 };
@@ -41,6 +41,10 @@ function updateBottomPage(){
 function convertTime(unixTime){
     const currentTime = new Date(unixTime * 1000);
     return currentTime;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // seperate funtion to update the temperature
