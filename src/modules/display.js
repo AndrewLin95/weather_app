@@ -2,8 +2,7 @@ import { callCurrentData, callHourlyData } from "./apiCalls";
 import { convertUnit } from "./tempDate";
 import { format } from 'date-fns';
 
-// create constants to store the data within this page.
-
+// updates the top section of the page (main) using current weather information
 function updateTopPage(){ 
     document.getElementById('location').textContent = callCurrentData().name;
     updateWeeklyTemperature();
@@ -14,15 +13,19 @@ function updateTopPage(){
     document.getElementById('sunrise').textContent = convertTime(callCurrentData().sys.sunrise).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
     document.getElementById('sunset').textContent = convertTime(callCurrentData().sys.sunset).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
+    // date-fns is used to format the date to the displayed format
     const today = format(new Date(), 'PPPP');
     const currentTime = new Date();
     document.getElementById('date').textContent = today;
     document.getElementById('time').textContent = currentTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 }
 
+// uses the hourly weather data to populate the bottom of the page
 function updateBottomPage(){
     let i = 0;
+    // a loop that iterates to populate all fields with information
     while (i < 7){
+        // API returns unix time. Convert time converts it to human readable time which gets converted to the appropriate format
         document.getElementById(`day${i}`).textContent = format(new Date(convertTime(callHourlyData().list[i].dt)), 'iiii');
         document.getElementById(`hour${i}`).textContent = convertTime(callHourlyData().list[i].dt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
         
@@ -38,6 +41,7 @@ function convertTime(unixTime){
     return currentTime;
 }
 
+// seperate funtion to update the temperature
 function updateWeeklyTemperature(){
     const temperature = Math.round(callCurrentData().main.temp * 1) / 1;
     document.getElementById('mainTemp').textContent = convertUnit(temperature);
