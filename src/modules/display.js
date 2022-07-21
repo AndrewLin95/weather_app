@@ -44,6 +44,4 @@ function updateWeeklyTemperature(){
     document.getElementById('feelsLike').textContent = convertUnit(feelsLikeTemp);
 }
 
-
-
 export { updateTopPage, updateBottomPage };
