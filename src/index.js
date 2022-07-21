@@ -7,8 +7,3 @@ weatherForm.addEventListener('submit', () => {
     const inputFormat = weatherInput.value.trim();
     getLatLon(inputFormat);
 })
-
-const testBtn = document.querySelector('#test');
-testBtn.addEventListener('click', () => {
-    console.log('test'());
-})
