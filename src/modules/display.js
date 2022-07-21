@@ -32,6 +32,8 @@ function updateBottomPage(){
         const temp = Math.round(callHourlyData().list[i].main.temp);
         document.getElementById(`temp${i}`).textContent = convertUnit(temp);
         document.getElementById(`weatherIcon${i}`).setAttribute('src', `http://openweathermap.org/img/wn/${callHourlyData().list[i].weather[0].icon}@2x.png`);
+
+        document.getElementById(`description${i}`).textContent = callHourlyData().list[i].weather[0].description;
         i++;
     }
 };
