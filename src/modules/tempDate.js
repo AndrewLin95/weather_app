@@ -1,4 +1,4 @@
-import { updateTopPage } from "./display";
+import { updateTopPage, updateBottomPage } from "./display";
 
 const unitBtn = document.querySelector('#unitToggle');
 
@@ -13,6 +13,7 @@ unitBtn.addEventListener('click', () => {
         currentUnit = 'Celcius';
     }
     updateTopPage();
+    updateBottomPage();
 });
 
 function convertUnit(kelvin) {
