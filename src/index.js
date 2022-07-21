@@ -1,4 +1,4 @@
-import { getLatLon } from "./modules/apiCalls";
+import { getLatLon, initialize } from "./modules/apiCalls";
 
 const weatherForm = document.querySelector('#weatherForm');
 
@@ -7,3 +7,6 @@ weatherForm.addEventListener('submit', () => {
     const inputFormat = weatherInput.value.trim();
     getLatLon(inputFormat);
 })
+
+// default initialize to Toronto
+initialize();
