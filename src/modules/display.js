@@ -11,6 +11,8 @@ function updateTopPage(){
     document.getElementById('description').textContent = ` ${callCurrentData().weather[0].description}`;
     document.getElementById('humidity').textContent = `${callCurrentData().main.humidity} %`;
     document.getElementById('pressure').textContent = `${callCurrentData().main.pressure} kPa`;
+    document.getElementById('sunrise').textContent = convertTime(callCurrentData().sys.sunrise).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    document.getElementById('sunset').textContent = convertTime(callCurrentData().sys.sunset).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
     const today = format(new Date(), 'PPPP');
     const currentTime = new Date();
@@ -20,7 +22,7 @@ function updateTopPage(){
 
 function updateBottomPage(){
     let i = 0;
-    while (i < 6){
+    while (i < 7){
         document.getElementById(`day${i}`).textContent = format(new Date(convertTime(callHourlyData().list[i].dt)), 'iiii');
         document.getElementById(`hour${i}`).textContent = convertTime(callHourlyData().list[i].dt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
         
