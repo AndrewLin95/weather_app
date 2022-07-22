@@ -4,14 +4,18 @@ import { format } from 'date-fns';
 
 // updates the top section of the page (main) using current weather information
 function updateTopPage(){ 
+    // accounts for the time zone relative to toronto only...
+    let timeZoneDifference = '';
+    timeZoneDifference = (callCurrentData().timezone - parseInt('-14400'));
+
     document.getElementById('location').textContent = callCurrentData().name;
     updateWeeklyTemperature();
     document.getElementById('weatherIcon').setAttribute('src', `https://openweathermap.org/img/wn/${callCurrentData().weather[0].icon}@2x.png`);
     document.getElementById('description').textContent = capitalizeFirstLetter(callCurrentData().weather[0].description);
     document.getElementById('humidity').textContent = `${callCurrentData().main.humidity} %`;
     document.getElementById('pressure').textContent = `${callCurrentData().main.pressure} kPa`;
-    document.getElementById('sunrise').textContent = convertTime(callCurrentData().sys.sunrise).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
-    document.getElementById('sunset').textContent = convertTime(callCurrentData().sys.sunset).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    document.getElementById('sunrise').textContent = convertTime((callCurrentData().sys.sunrise)+timeZoneDifference).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+    document.getElementById('sunset').textContent = convertTime((callCurrentData().sys.sunset)+timeZoneDifference).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
     // date-fns is used to format the date to the displayed format
     const today = format(new Date(), 'PPPP');
@@ -22,12 +26,15 @@ function updateTopPage(){
 
 // uses the hourly weather data to populate the bottom of the page
 function updateBottomPage(){
+    let timeZoneDifference = '';
+    timeZoneDifference = (callCurrentData().timezone - parseInt('-14400'));
+
     let i = 0;
     // a loop that iterates to populate all fields with information
     while (i < 7){
         // API returns unix time. Convert time converts it to human readable time which gets converted to the appropriate format
         document.getElementById(`day${i}`).textContent = format(new Date(convertTime(callHourlyData().list[i].dt)), 'iiii');
-        document.getElementById(`hour${i}`).textContent = convertTime(callHourlyData().list[i].dt).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+        document.getElementById(`hour${i}`).textContent = convertTime(callHourlyData().list[i].dt + timeZoneDifference).toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
         
         const temp = Math.round(callHourlyData().list[i].main.temp);
         document.getElementById(`temp${i}`).textContent = convertUnit(temp);
