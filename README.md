@@ -26,3 +26,4 @@
 - Learned to use extensions (prettier and eslint)
 - Utilized of APIs, async/await functions and promises
 - Formatted times based off timezones
+- Npm used to build and deploy code to github pages
