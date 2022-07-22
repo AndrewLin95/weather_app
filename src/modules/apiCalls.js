@@ -9,7 +9,7 @@ let hourlyWeatherData = '';
 // weather API uses latitude and longitude information. This first fetch retrieves the lat lon of the city entered
 async function getLatLon(location){
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=59d8f83c0d0672671941c70c99060910`, {mode:'cors'});
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=59d8f83c0d0672671941c70c99060910`, {mode:'cors'});
         weatherGeocode = await response.json();
         getCurrentWeather();
         getWeeklyWeather();
