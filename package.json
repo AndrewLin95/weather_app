@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/AndrewLin95/weather_app/issues"
   },
-  "homepage": "https://AndrewLin95.github.io/weather_app",
+  "homepage": "https://andrewlin95.github.io/weather_app",
   "devDependencies": {
     "eslint": "^8.20.0",
     "eslint-config-google": "^0.14.0",
