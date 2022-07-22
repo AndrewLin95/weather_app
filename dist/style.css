@@ -51,6 +51,7 @@ table {
 /* general layout */
 #backgroundImage{
     position: absolute;
+    object-fit: cover;
     width: 100vw;
     height: 100vh;
     z-index: -10;
@@ -74,6 +75,11 @@ div{
 
 i{
     width: 40px;
+    font-size: 2em;
+}
+
+.fa-temperature-half{
+    font-size: 3em;
 }
 
 input{
@@ -94,6 +100,10 @@ input{
 
 .contentText1_5{
     font-size: 1.5em;
+}
+
+.contentText1{
+    font-size: 1em;
 }
 
 /* centerForm */
@@ -185,4 +195,124 @@ input{
 .weatherIcon{
     position:relative;
     right: 1.5em;
+}
+
+/* responsive design */
+@media (max-width: 1300px){
+    #main{
+        top: 5vh;
+    }
+}
+
+@media (max-width: 900px) {
+    #main{
+        top: 10vh;
+    }
+
+    #centerForm{
+        left: 5vw;
+    }
+
+    #forecastHourly{
+        width: 5em;
+    }
+
+    .contentText3{
+        font-size: 2em;
+    }
+    
+    .contentText2{
+        font-size: 1.33em;
+    }
+    
+    .contentText1_5{
+        font-size: 1em;
+    }
+
+    i{
+        width: 40px;
+        font-size: 1.33em;
+    }
+    
+    .fa-temperature-half{
+        font-size: 2em;
+    }
+
+    .weatherIcon{
+        width: 66%;
+        height: auto;
+        right: 0.66em;
+    }
+}
+
+@media (max-width: 600px){
+    #hourlyForecast{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecastHourly{
+        flex-direction: row;
+        gap: 1em;
+        position: relative;
+        top: 7em;
+        height: 4em;
+    }
+    
+    .fa-temperature-half{
+        font-size: 1.5em;
+    }
+
+    .contentText3{
+        font-size: 1.5em;
+    }
+    
+    .contentText2{
+        font-size: 1em;
+    }
+    
+    .contentText1_5{
+        font-size: 0.75em;
+    }
+
+    .dayTime{
+        margin-right: 1em;
+        position: relative;
+        bottom: 0.5em;
+    }
+
+    .weatherIcon{
+        width: 66%;
+        height: auto;
+        bottom: 1.3em;
+    }
+
+    .hourValue{
+        width: 5em;
+    }
+
+    .hourlyDescription{
+        width: 2em;
+    }
+}
+
+@media (max-width: 400px){
+    #mainRight{
+        display:none;
+    }
+
+    .hourlyDescription{
+        display:none;
+    }
+
+    .forecastHourly{
+        height:3em;
+        top: 4em;
+    }
+
+    .weatherIcon{
+        width: 50%;
+        height: auto;
+        bottom: 1.3em;
+    }
 }

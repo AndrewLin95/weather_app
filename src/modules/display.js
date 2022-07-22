@@ -10,7 +10,7 @@ function updateTopPage(){
 
     document.getElementById('location').textContent = callCurrentData().name;
     updateWeeklyTemperature();
-    document.getElementById('weatherIcon').setAttribute('src', `https://openweathermap.org/img/wn/${callCurrentData().weather[0].icon}@2x.png`);
+    document.getElementById('weatherIconMain').setAttribute('src', `https://openweathermap.org/img/wn/${callCurrentData().weather[0].icon}@2x.png`);
     document.getElementById('description').textContent = capitalizeFirstLetter(callCurrentData().weather[0].description);
     document.getElementById('humidity').textContent = `${callCurrentData().main.humidity} %`;
     document.getElementById('pressure').textContent = `${callCurrentData().main.pressure} kPa`;
