@@ -1,0 +1,163 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* general layout */
+#backgroundImage{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+}
+
+div{
+    color: rgba(255, 255, 255, 0.90);
+}
+
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.flexColumn{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+i{
+    width: 40px;
+}
+
+#unitToggleDiv{
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+}
+
+/* contentText */
+.contentText3{
+    font-size: 3em;
+}
+
+.contentText2{
+    font-size: 2em;
+}
+
+.contentText1_5{
+    font-size: 1.5em;
+}
+
+/* centerForm */
+#centerForm{
+    position: absolute;
+    top: 3vh;
+    left: 45vw;
+}
+
+/* main layout */
+#main{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 10vh;
+    padding: 5vw;
+}
+
+/* main formatting */
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#location{
+    font-weight: bold;
+}
+
+#tempAndIcon{
+    align-items: center;
+}
+
+#mainRight{
+    gap: 2em;
+}
+
+/* bottom formatting */
+#bottom{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 90vw;
+    left: 5vw;
+    bottom: 10vh;
+}
+
+#hourlyForecast{
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    left: 5vw;
+    bottom: 10vh;
+}
+
+.forecastHourly{
+    height: auto;
+    width: 7em;
+    gap: 5px;
+}
+
+.hourValue{
+    padding-bottom: 1em;
+}
+
+.weatherIcon{
+    position:relative;
+    right: 1.5em;
+}
